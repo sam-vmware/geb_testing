@@ -16,7 +16,9 @@ To make it clearer look at these lines:
         to LoginPage
 
 ```
+
 This is using a Selenium [PageObject](https://code.google.com/p/selenium/wiki/PageObjects) but obviously much less verbose compared to the standard Java implementation. When this step is performed we are driven to the login page via the [LoginPage](functional-tests/src/test/groovy/pages/LoginPage.groovy) PageObject. These lines
+
 ```groovy
 static content = {
         authModule { module AuthModule }
@@ -24,6 +26,7 @@ static content = {
 
         error(required: false) { module ErrorModule }
     }
+    
 ```
 are part of the Geb [Content DSL](http://www.gebish.org/manual/current/pages.html#the_content_dsl) that allow us to define content for the PageObject which also in turn can use other modules. Here we make use of the authModule.
 ```groovy
